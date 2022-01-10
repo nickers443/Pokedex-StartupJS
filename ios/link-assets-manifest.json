@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "public/fonts/.gitallowed",
+      "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    },
+    {
+      "path": "public/fonts/PokemonHollow-Regular.ttf",
+      "sha1": "f7dc1ff5c7a03a6b81b01f1f679159b62c4424df"
+    },
+    {
+      "path": "public/fonts/PokemonSolid-Regular.ttf",
+      "sha1": "c683166c1d18b320fa8d1249f901a370c0719c3f"
+    }
+  ]
+}

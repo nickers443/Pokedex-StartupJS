@@ -1,0 +1,9 @@
+{
+  "NODE_ENV": "development",
+  "PORT": 3000,
+  "SESSION_SECRET": "GxFLScJZSbYLtlmN1NjBR26TYosZx5EB",
+  "BASE_URL": "http://127.0.0.1:3000",
+  "REDIS_URL": "redis://127.0.0.1:6379/1",
+  "MONGO_URL": "mongodb://127.0.0.1:27017/Pokedex",
+  "COPY_TO_ENV": ["MONGO_URL"]
+}
