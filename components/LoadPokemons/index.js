@@ -27,7 +27,6 @@ export default observer(function LoadPokemons ({ onStart, onFinish }) {
         promises = []
       }
     }
-
     await Promise.all(promises)
     onFinish && onFinish()
   }
