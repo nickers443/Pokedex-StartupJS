@@ -1,13 +1,24 @@
-import React from 'react'
-import { ScrollView } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import { observer, useQuery, useValue } from 'startupjs'
-import { Content, Loader, Span, Div } from '@startupjs/ui'
+import { Content, Loader, Span, Div, Progress } from '@startupjs/ui'
 import LoadPokemons from '../../../components/LoadPokemons'
 import ShowPokemons from '../../../components/ShowPokemons'
+import axios from 'axios'
 import './index.styl'
 
 export default observer(function PHome () {
-  const [ count ] = useQuery('pokemons', { $count: true })
+  const [ countAll, setCountAll ] = useState()
+  async function dataGet() {
+    const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon`) 
+    const { data: { count } } = resp 
+    setCountAll(count)
+  }
+  
+  useEffect(() => {
+    dataGet()
+  }, [])
+
+  const [ countNow ] = useQuery('pokemons', { $count: true })
   const [ loading, $loading ] = useValue()
 
   return pug`
@@ -16,20 +27,23 @@ export default observer(function PHome () {
         alignItems: 'center',
         justifyContent: 'center'
       }
-      width='full'
+      width='wide'
       padding
     )
-      if count 
+      if countNow 
         if loading
           Loader(
             color='error'
           )
-          Span Wait for loading pokemons
+          Span Wait for loading pokemons #{countNow} from #{countAll}
         else
           ShowPokemons
       else 
         LoadPokemons(
-          onStart=() => $loading.set(true)
+          onStart=() => {
+            $loading.set(true)
+            dataGet()
+          }
           onFinish=() => $loading.del()
         )
   `

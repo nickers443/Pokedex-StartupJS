@@ -1,4 +1,4 @@
-$menuHeight = 10u
+$menuHeight = 12u
 
 @font-face
   font-family PokemonHollow-Regular
@@ -6,13 +6,10 @@ $menuHeight = 10u
   src url(public/fonts/PokemonHollow-Regular.ttf)
 
 .sidebar
-  background-color #eee
-
   &-menu
     padding-top 2u
 
 .menu
-  background-color white
   height $menuHeight 
   z-index 1
   align-items center
@@ -22,8 +19,13 @@ $menuHeight = 10u
   border none
 
 .logo
+  position absolute
+  left 50%
+  margin-left -91.5px
   font-family PokemonHollow-Regular 
-  margin-left 2u
   color $UI.colors.primary
   text-shadow 1px 1px yellow
   font(h2)
+  +mobile()
+    font(h3)
+    margin-left -61.5px

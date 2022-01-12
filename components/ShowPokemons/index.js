@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useQuery, observer, useValue } from 'startupjs'
-import { Pagination, Div, Span, Row, Select, Multiselect, TextInput, Button, Loader } from '@startupjs/ui'
+import { Pagination, Div, Row, Select, Multiselect, TextInput, Button } from '@startupjs/ui'
 import PokemonCard from '../PokemonCard'
 import axios from 'axios'
 import { faSearch, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
