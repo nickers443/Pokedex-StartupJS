@@ -28,9 +28,10 @@ export default observer(function PInfoPokemon () {
   const fields = Object.keys(INITIAL_FORM_STATE)
 
   const [ form, $form ] = useValue(_pick(pokemon, fields))
+  console.log((pokemon, fields),'<<0')
 
-  console.log(_pick(pokemon, fields))
-  console.log(form)
+  console.log(_pick(pokemon, fields),'<<1')
+  console.log(form,'2<<')
 
   function onTypesChange( values ) {
     const result = []
@@ -178,7 +179,7 @@ export default observer(function PInfoPokemon () {
         alignItems: 'center',
         justifyContent: 'center'
       }
-      width='full'
+
       padding
       full
     )  
@@ -297,7 +298,7 @@ export default observer(function PInfoPokemon () {
           Div.avatar
             Avatar(
               src=pokemon.sprites.front_default
-              size='300px'
+              size='250px'
             )
       Row.sectionButton
         Button(

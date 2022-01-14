@@ -8,9 +8,8 @@ export default observer(function PAbout () {
   return pug`
     ScrollView.root
       Content(padding)
-        Row
-          Div
-            Avatar(
+        Div
+          Avatar(
               size='120px'
               src='https://sun9-59.userapi.com/impg/TJj83iPZfPVJBXXysnXnynHDCzPTGkNaD1b9zA/i9kYGm8xew8.jpg?size=1620x2160&quality=96&sign=3340dd02923809057d7629c88c56fc4c&type=album'
               ) Dima Stremin
