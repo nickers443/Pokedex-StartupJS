@@ -33,7 +33,7 @@ export default observer(function ({ children }) {
   }
 
   return pug`
-    Layout
+    Layout.root
       SmartSidebar.sidebar(
         $open=$opened
         renderContent=renderSidebar

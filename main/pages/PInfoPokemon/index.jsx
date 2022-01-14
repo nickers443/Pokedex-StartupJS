@@ -29,7 +29,8 @@ export default observer(function PInfoPokemon () {
 
   const [ form, $form ] = useValue(_pick(pokemon, fields))
 
-  console.log(form.abilities)
+  console.log(_pick(pokemon, fields))
+  console.log(form)
 
   function onTypesChange( values ) {
     const result = []
